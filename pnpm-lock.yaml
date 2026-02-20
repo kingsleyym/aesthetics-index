@@ -20,6 +20,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@aesthetics-index/adapters-mock':
+        specifier: workspace:*
+        version: link:../../packages/adapters/mock
       '@aesthetics-index/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -60,6 +63,8 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
+
+  packages/adapters/mock: {}
 
   packages/ui:
     dependencies:

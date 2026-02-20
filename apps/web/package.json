@@ -14,7 +14,8 @@
     "react-dom": "^19.2.1",
     "lucide-react": "^0.555.0",
     "next-themes": "^0.4.6",
-    "@aesthetics-index/ui": "workspace:*"
+    "@aesthetics-index/ui": "workspace:*",
+    "@aesthetics-index/adapters-mock": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",

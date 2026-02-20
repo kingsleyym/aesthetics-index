@@ -1,92 +1,127 @@
-import { Button, Input, Badge, Avatar, Rating } from '@aesthetics-index/ui';
+'use client';
+
+import { Header, Footer, HeroHome, CategoryCard, ClinicGrid } from '@aesthetics-index/ui';
+import { mockClinics } from '@aesthetics-index/adapters-mock';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    router.push(`/suche?q=${encodeURIComponent(query)}`);
+  };
+
+  const handleClinicClick = (clinic: any) => {
+    router.push(`/praxis/${clinic.slug || clinic.id}`);
+  };
+
+  // Mock categories
+  const categories = [
+    { name: 'Botox', icon: '💉', count: 45, slug: 'botox' },
+    { name: 'Hyaluron & Filler', icon: '✨', count: 38, slug: 'hyaluron' },
+    { name: 'Lippen', icon: '💋', count: 32, slug: 'lippen' },
+    { name: 'Faltenbehandlung', icon: '🌟', count: 28, slug: 'falten' },
+    { name: 'Hautstraffung', icon: '🎯', count: 22, slug: 'hautstraffung' },
+    { name: 'Mesotherapie', icon: '💆', count: 18, slug: 'mesotherapie' },
+  ];
+
+  // Featured clinics (top 3)
+  const featuredClinics = mockClinics
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 3)
+    .map(clinic => ({
+      name: clinic.name,
+      city: clinic.city,
+      rating: clinic.rating,
+      reviewCount: clinic.reviewCount,
+      image: clinic.image,
+      categories: clinic.categories,
+      verified: clinic.verified
+    }));
+
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto space-y-12">
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Aesthetics Index
-          </h1>
-          <p className="text-lg text-gray-600">
-            Component Test Page (M1 Foundation)
-          </p>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
 
-        {/* Buttons */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Buttons</h2>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary">Primary Button</Button>
-            <Button variant="secondary">Secondary Button</Button>
-            <Button variant="ghost">Ghost Button</Button>
-            <Button variant="dark">Dark Button</Button>
-            <Button size="sm" variant="primary">Small Button</Button>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <HeroHome onSearch={handleSearch} />
+
+        {/* Categories Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Beliebte Behandlungen
+              </h2>
+              <p className="text-gray-600">
+                Finde Experten für deine gewünschte Behandlung
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {categories.map((cat, idx) => (
+                <CategoryCard
+                  key={idx}
+                  category={cat}
+                  onClick={() => router.push(`/kategorie/${cat.slug}`)}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Inputs */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Inputs</h2>
-          <div className="max-w-md space-y-4">
-            <Input 
-              label="E-Mail" 
-              type="email" 
-              placeholder="name@example.com" 
+        {/* Featured Clinics */}
+        <section className="py-12">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Top-bewertete Praxen in München
+              </h2>
+              <p className="text-gray-600">
+                Unsere am besten bewerteten Ärzte
+              </p>
+            </div>
+
+            <ClinicGrid
+              clinics={featuredClinics}
+              onClinicClick={handleClinicClick}
             />
-            <Input 
-              label="Suche" 
-              type="search" 
-              placeholder="Botox, Lippen, Hautarzt..." 
-            />
-            <Input 
-              label="Mit Fehler" 
-              type="text" 
-              error="Dieses Feld ist erforderlich" 
-            />
+
+            <div className="text-center mt-8">
+              <button
+                onClick={() => router.push('/city/muenchen')}
+                className="btn bg-linear-to-t from-blue-600 to-blue-500 text-white"
+              >
+                Alle Praxen in München
+              </button>
+            </div>
           </div>
         </section>
 
-        {/* Badges */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Badges</h2>
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="default">Default</Badge>
-            <Badge variant="success">Verifiziert</Badge>
-            <Badge variant="warning">Warnung</Badge>
-            <Badge variant="info">Info</Badge>
+        {/* CTA Section */}
+        <section className="py-16 bg-blue-50">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Betreiben Sie eine Praxis?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Präsentieren Sie Ihre Leistungen und erreichen Sie neue Patienten
+            </p>
+            <button
+              onClick={() => router.push('/app/register')}
+              className="btn bg-linear-to-t from-blue-600 to-blue-500 text-white"
+            >
+              Kostenlos registrieren
+            </button>
           </div>
         </section>
+      </main>
 
-        {/* Avatars */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Avatars</h2>
-          <div className="flex items-center gap-4">
-            <Avatar alt="Klinik München" fallback="KM" size="sm" />
-            <Avatar alt="Dr. Müller" fallback="DM" size="md" />
-            <Avatar alt="Hautarztpraxis" fallback="HP" size="lg" />
-          </div>
-        </section>
-
-        {/* Ratings */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">Ratings</h2>
-          <div className="space-y-2">
-            <Rating value={5} count={127} showValue size="md" />
-            <Rating value={4.5} count={89} showValue size="md" />
-            <Rating value={4.0} count={45} showValue size="md" />
-            <Rating value={3.5} count={12} showValue size="sm" />
-          </div>
-        </section>
-
-        {/* Success Message */}
-        <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-          <p className="text-green-800 font-medium">
-            ✅ M1 Foundation Complete! All base components working.
-          </p>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
