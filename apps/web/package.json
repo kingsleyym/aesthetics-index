@@ -11,6 +11,7 @@
   "dependencies": {
     "@aesthetics-index/adapters-mock": "workspace:*",
     "@aesthetics-index/ui": "workspace:*",
+    "@tailwindcss/forms": "^0.5.11",
     "aos": "^2.3.4",
     "lucide-react": "^0.555.0",
     "next": "16.0.10",

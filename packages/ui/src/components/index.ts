@@ -39,3 +39,10 @@ export type { FilterButtonProps } from "./FilterButton";
 
 export { CategoryCard } from "./CategoryCard";
 export type { CategoryCardProps } from "./CategoryCard";
+
+// Page sections (Vorlage design)
+export { default as Behandlungen } from "./Behandlungen";
+export { default as WieFunktionierts } from "./WieFunktionierts";
+export { default as Testimonial } from "./Testimonial";
+export { default as CtaSection } from "./CtaSection";
+export { default as PageIllustration } from "./PageIllustration";
