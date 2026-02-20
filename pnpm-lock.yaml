@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      aos:
+        specifier: 3.0.0-beta.6
+        version: 3.0.0-beta.6
     devDependencies:
       prettier:
         specifier: ^3.8.1
@@ -468,6 +472,9 @@ packages:
 
   aos@2.3.4:
     resolution: {integrity: sha512-zh/ahtR2yME4I51z8IttIt4lC1Nw0ktsFtmeDzID1m9naJnWXhCoARaCgNOGXb5CLy3zm+wqmRAEgMYB5E2HUw==}
+
+  aos@3.0.0-beta.6:
+    resolution: {integrity: sha512-VLWrpq8bfAWcetynVHMMrqdC+89Qq/Ym6UBJbHB4crIwp3RR8uq1dNGgsFzoDl03S43rlVMK+na3r5+oUCZsYw==}
 
   caniuse-lite@1.0.30001770:
     resolution: {integrity: sha512-x/2CLQ1jHENRbHg5PSId2sXq1CIO1CISvwWAj027ltMVG2UNgW+w9oH2+HzgEIRFembL8bUlXtfbBHR1fCg2xw==}
@@ -1065,6 +1072,12 @@ snapshots:
       csstype: 3.2.3
 
   aos@2.3.4:
+    dependencies:
+      classlist-polyfill: 1.2.0
+      lodash.debounce: 4.0.8
+      lodash.throttle: 4.1.1
+
+  aos@3.0.0-beta.6:
     dependencies:
       classlist-polyfill: 1.2.0
       lodash.debounce: 4.0.8
