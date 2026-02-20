@@ -3,8 +3,9 @@
 @import "@aesthetics-index/ui/styles";
 
 /* Cruip theme (AOS animations, custom styles) */
-@import "@aesthetics-index/ui/styles/theme";
-@import "@aesthetics-index/ui/styles/utility-patterns";
+@import "./theme.css";
+@import "./utility-patterns.css";
+@import "./range-slider.css";
 
 /* AOS library styles */
 @import "aos/dist/aos.css";
