@@ -29,7 +29,7 @@ export const HeroHome: React.FC<HeroHomeProps> = ({ onSearch }) => {
           {/* Section header */}
           <div className="pb-12 text-center md:pb-16">
             <div
-              className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]"
+              className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]"
               data-aos="zoom-y-out"
             >
               <div className="-mx-0.5 flex justify-center -space-x-3">
@@ -78,7 +78,7 @@ export const HeroHome: React.FC<HeroHomeProps> = ({ onSearch }) => {
               </div>
             </div>
             <h1
-              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl"
+              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
@@ -93,7 +93,7 @@ export const HeroHome: React.FC<HeroHomeProps> = ({ onSearch }) => {
               >
                 Geprüfte Ärzte, echte Bewertungen, transparente Preise in München
               </p>
-              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
+              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                 <div
                   className="mx-auto max-w-2xl"
                   data-aos="zoom-y-out"
