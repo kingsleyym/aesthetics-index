@@ -1,61 +1,193 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 
+export interface FooterProps {
+  border?: boolean;
+}
+
 /**
- * Footer Component
- * Site footer with links
+ * Footer Component - Cruip Template Design
+ * Grid-Layout mit gradient borders
  */
-export const Footer: React.FC = () => {
+export const Footer: React.FC<FooterProps> = ({ border = true }) => {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 py-12">
+    <footer>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo + Tagline */}
-          <div>
-            <div className="text-xl font-bold text-gray-800 mb-2">
-              Aesthetics Index
+        {/* Top area: Blocks */}
+        <div
+          className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${
+            border
+              ? "border-t [border-image:linear-gradient(to_right,transparent,theme(colors.slate.200),transparent)1]"
+              : ""
+          }`}
+        >
+          {/* 1st block */}
+          <div className="space-y-2 sm:col-span-12 lg:col-span-4">
+            <div>
+              <Link href="/" className="inline-block">
+                <span className="text-xl font-bold text-gray-800">
+                  Aesthetics Index
+                </span>
+              </Link>
             </div>
-            <p className="text-sm text-gray-600">
-              Finde den richtigen Experten für ästhetische Medizin.
-            </p>
+            <div className="text-sm text-gray-600">
+              &copy; 2026 Aesthetics Index - Alle Rechte vorbehalten.
+            </div>
           </div>
 
-          {/* Produkt */}
-          <div>
-            <h3 className="font-semibold text-gray-800 mb-3">Produkt</h3>
-            <ul className="space-y-2">
-              <li><Link href="/kategorien" className="text-sm text-gray-600 hover:text-blue-600">Kategorien</Link></li>
-              <li><Link href="/staedte" className="text-sm text-gray-600 hover:text-blue-600">Städte</Link></li>
-              <li><Link href="/magazin" className="text-sm text-gray-600 hover:text-blue-600">Magazin</Link></li>
+          {/* 2nd block - Kategorien */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Kategorien</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/kategorien/botox"
+                >
+                  Botox
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/kategorien/hyaluron"
+                >
+                  Hyaluron
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/kategorien/lippen"
+                >
+                  Lippen
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/kategorien"
+                >
+                  Alle Kategorien
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Für Praxen */}
-          <div>
-            <h3 className="font-semibold text-gray-800 mb-3">Für Praxen</h3>
-            <ul className="space-y-2">
-              <li><Link href="/app/register" className="text-sm text-gray-600 hover:text-blue-600">Registrieren</Link></li>
-              <li><Link href="/app/preise" className="text-sm text-gray-600 hover:text-blue-600">Preise</Link></li>
-              <li><Link href="/app/badge" className="text-sm text-gray-600 hover:text-blue-600">Badge Widget</Link></li>
+          {/* 3rd block - Städte */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Städte</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/muenchen"
+                >
+                  München
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/berlin"
+                >
+                  Berlin
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/hamburg"
+                >
+                  Hamburg
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/staedte"
+                >
+                  Alle Städte
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Rechtliches */}
-          <div>
-            <h3 className="font-semibold text-gray-800 mb-3">Rechtliches</h3>
-            <ul className="space-y-2">
-              <li><Link href="/impressum" className="text-sm text-gray-600 hover:text-blue-600">Impressum</Link></li>
-              <li><Link href="/datenschutz" className="text-sm text-gray-600 hover:text-blue-600">Datenschutz</Link></li>
-              <li><Link href="/agb" className="text-sm text-gray-600 hover:text-blue-600">AGB</Link></li>
+          {/* 4th block - Über uns */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Über uns</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/ueber-uns"
+                >
+                  Über Aesthetics Index
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/magazin"
+                >
+                  Magazin
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/app"
+                >
+                  Für Praxen
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 5th block - Rechtliches */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Rechtliches</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/impressum"
+                >
+                  Impressum
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/datenschutz"
+                >
+                  Datenschutz
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/agb"
+                >
+                  AGB
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-          <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Aesthetics Index. Alle Rechte vorbehalten.
-          </p>
+      {/* Big text */}
+      <div className="relative -mt-16 h-60 w-full" aria-hidden="true">
+        <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-gradient-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['Aesthetics'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['Aesthetics'] after:[text-shadow:0_1px_0_white]"></div>
+        {/* Glow */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
+          aria-hidden="true"
+        >
+          <div className="h-56 w-56 rounded-full border-[20px] border-blue-700 blur-[80px]"></div>
         </div>
       </div>
     </footer>

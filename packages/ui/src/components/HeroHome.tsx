@@ -1,50 +1,123 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import PageIllustration from './PageIllustration';
 import { SearchBar } from './SearchBar';
+import Avatar01 from '../../public/images/avatar-01.jpg';
+import Avatar02 from '../../public/images/avatar-02.jpg';
+import Avatar03 from '../../public/images/avatar-03.jpg';
+import Avatar04 from '../../public/images/avatar-04.jpg';
+import Avatar05 from '../../public/images/avatar-05.jpg';
+import Avatar06 from '../../public/images/avatar-06.jpg';
 
 export interface HeroHomeProps {
   onSearch: (query: string) => void;
 }
 
 /**
- * HeroHome Component
- * Homepage hero with search
+ * HeroHome Component - Cruip Template Design
+ * Mit PageIllustration, Avatar-Reihe, Gradient borders, AOS
  */
 export const HeroHome: React.FC<HeroHomeProps> = ({ onSearch }) => {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+    <section className="relative">
+      <PageIllustration />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Text Content */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            Finde den richtigen Experten für{' '}
-            <span className="text-blue-600">ästhetische Medizin</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Geprüfte Ärzte, echte Bewertungen, transparente Preise in München
-          </p>
-        </div>
-
-        {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-8">
-          <SearchBar
-            placeholder="Botox, Lippen, Hautarzt..."
-            onSearch={onSearch}
-          />
-        </div>
-
-        {/* Quick Categories */}
-        <div className="flex flex-wrap justify-center gap-3">
-          <span className="text-sm text-gray-600">Beliebt:</span>
-          {['Botox', 'Hyaluron', 'Lippen', 'Faltenbehandlung'].map((cat) => (
-            <button
-              key={cat}
-              className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+        {/* Hero content */}
+        <div className="pb-12 pt-32 md:pb-20 md:pt-40">
+          {/* Section header */}
+          <div className="pb-12 text-center md:pb-16">
+            <div
+              className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]"
+              data-aos="zoom-y-out"
             >
-              {cat}
-            </button>
-          ))}
+              <div className="-mx-0.5 flex justify-center -space-x-3">
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar01}
+                  width={32}
+                  height={32}
+                  alt="Avatar 01"
+                />
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar02}
+                  width={32}
+                  height={32}
+                  alt="Avatar 02"
+                />
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar03}
+                  width={32}
+                  height={32}
+                  alt="Avatar 03"
+                />
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar04}
+                  width={32}
+                  height={32}
+                  alt="Avatar 04"
+                />
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar05}
+                  width={32}
+                  height={32}
+                  alt="Avatar 05"
+                />
+                <Image
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src={Avatar06}
+                  width={32}
+                  height={32}
+                  alt="Avatar 06"
+                />
+              </div>
+            </div>
+            <h1
+              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl"
+              data-aos="zoom-y-out"
+              data-aos-delay={150}
+            >
+              Finde den richtigen Experten für <br className="max-lg:hidden" />
+              ästhetische Medizin
+            </h1>
+            <div className="mx-auto max-w-3xl">
+              <p
+                className="mb-8 text-lg text-gray-700"
+                data-aos="zoom-y-out"
+                data-aos-delay={300}
+              >
+                Geprüfte Ärzte, echte Bewertungen, transparente Preise in München
+              </p>
+              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
+                <div
+                  className="mx-auto max-w-2xl"
+                  data-aos="zoom-y-out"
+                  data-aos-delay={450}
+                >
+                  <SearchBar
+                    placeholder="Botox, Lippen, Hautarzt..."
+                    onSearch={onSearch}
+                  />
+                  <div className="mt-4 flex flex-wrap justify-center gap-3">
+                    <span className="text-sm text-gray-600">Beliebt:</span>
+                    {['Botox', 'Hyaluron', 'Lippen', 'Faltenbehandlung'].map((cat) => (
+                      <button
+                        key={cat}
+                        className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -2,4 +2,10 @@
 @import "@aesthetics-index/ui/tokens";
 @import "@aesthetics-index/ui/styles";
 
+/* Cruip theme (AOS animations, custom styles) */
+@import "@aesthetics-index/ui/styles/theme";
+
+/* AOS library styles */
+@import "aos/dist/aos.css";
+
 @import "tailwindcss";
