@@ -12,3 +12,16 @@ export type { AvatarProps } from "./Avatar";
 
 export { Rating } from "./Rating";
 export type { RatingProps } from "./Rating";
+
+// Molecule Components
+export { SearchBar } from "./SearchBar";
+export type { SearchBarProps } from "./SearchBar";
+
+export { ClinicCard } from "./ClinicCard";
+export type { ClinicCardProps } from "./ClinicCard";
+
+export { FilterButton } from "./FilterButton";
+export type { FilterButtonProps } from "./FilterButton";
+
+export { CategoryCard } from "./CategoryCard";
+export type { CategoryCardProps } from "./CategoryCard";
