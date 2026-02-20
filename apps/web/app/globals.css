@@ -1,1 +1,5 @@
+/* Import design tokens + base styles */
+@import "@aesthetics-index/ui/tokens";
+@import "@aesthetics-index/ui/styles";
+
 @import "tailwindcss";

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 export interface AvatarProps {
   src?: string;
@@ -33,7 +32,11 @@ export const Avatar: React.FC<AvatarProps> = ({
         aria-label={alt}
         className={`relative ${sizeClasses[size]} rounded-full overflow-hidden border-2 border-white shadow-sm ${className}`}
       >
-        <Image src={src} alt={alt} fill className="object-cover" />
+        <img 
+          src={src} 
+          alt={alt} 
+          className="w-full h-full object-cover" 
+        />
       </div>
     );
   }
