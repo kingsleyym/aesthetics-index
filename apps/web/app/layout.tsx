@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Aesthetics Index — Finde deinen Experten für ästhetische Medizin',
-  description: 'Geprüfte Ärzte, echte Bewertungen, transparente Preise in München',
+  title: 'Aesthetics Index — Medical Aesthetics Directory',
+  description: 'Find the best clinics for cosmetic treatments',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className="antialiased bg-background text-gray-800">
+      <body className="antialiased">
         {children}
       </body>
     </html>

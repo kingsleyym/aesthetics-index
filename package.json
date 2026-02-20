@@ -1,16 +1,16 @@
 {
   "name": "aesthetics-index",
+  "version": "0.2.0",
   "private": true,
+  "packageManager": "pnpm@10.15.1",
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "turbo lint"
   },
   "devDependencies": {
-    "turbo": "^2.3.3",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.11"
-  },
-  "packageManager": "pnpm@10.15.1"
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "turbo": "^2.8.10"
+  }
 }
