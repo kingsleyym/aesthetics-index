@@ -1,16 +1,16 @@
-/* Import design tokens + base styles */
-@import "@aesthetics-index/ui/tokens";
-@import "@aesthetics-index/ui/styles";
+@import "tailwindcss";
 
-/* Cruip theme (AOS animations, custom styles) */
+/* Additional styles (layer(components) wie Vorlage) */
+@import "./utility-patterns.css" layer(components);
 @import "./theme.css";
-@import "./utility-patterns.css";
 @import "./range-slider.css";
 
 /* AOS library styles */
 @import "aos/dist/aos.css";
 
-@import "tailwindcss";
+/* UI package tokens + base styles */
+@import "@aesthetics-index/ui/tokens";
+@import "@aesthetics-index/ui/styles";
 
 @theme {
   --font-inter: Inter, sans-serif;
