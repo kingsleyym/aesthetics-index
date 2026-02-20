@@ -7,7 +7,8 @@
     ".": "./src/index.ts",
     "./tokens": "./tokens/index.css",
     "./styles": "./styles/utilities.css",
-    "./styles/theme": "./styles/theme.css"
+    "./styles/theme": "./styles/theme.css",
+    "./styles/utility-patterns": "./styles/utility-patterns.css"
   },
   "scripts": {
     "build": "echo 'UI package ready'"
