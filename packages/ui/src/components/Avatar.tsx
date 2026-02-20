@@ -29,6 +29,8 @@ export const Avatar: React.FC<AvatarProps> = ({
   if (src) {
     return (
       <div
+        role="img"
+        aria-label={alt}
         className={`relative ${sizeClasses[size]} rounded-full overflow-hidden border-2 border-white shadow-sm ${className}`}
       >
         <Image src={src} alt={alt} fill className="object-cover" />
@@ -38,6 +40,8 @@ export const Avatar: React.FC<AvatarProps> = ({
 
   return (
     <div
+      role="img"
+      aria-label={alt}
       className={`${sizeClasses[size]} rounded-full bg-gray-200 flex items-center justify-center font-medium text-gray-700 border-2 border-white shadow-sm ${className}`}
     >
       {fallback || alt.slice(0, 2).toUpperCase()}

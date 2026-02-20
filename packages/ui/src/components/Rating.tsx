@@ -43,7 +43,9 @@ export const Rating: React.FC<RatingProps> = ({
 
   return (
     <div className={`flex items-center gap-1 ${className}`}>
-      <div className="flex items-center">{stars}</div>
+      <div role="img" aria-label={`${value} out of 5 stars`} className="flex items-center">
+        {stars}
+      </div>
       {showValue && (
         <span className="text-sm font-medium text-gray-700 ml-1">{value.toFixed(1)}</span>
       )}

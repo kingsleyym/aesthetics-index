@@ -24,6 +24,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
+      role="status"
       className={`inline-flex items-center px-2 py-1 text-xs font-medium rounded-full ${variantClasses[variant]} ${className}`}
     >
       {children}
