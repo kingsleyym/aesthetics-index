@@ -1,15 +1,31 @@
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all;
+  font-size: 0.875rem;
+  line-height: 1.5715;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn {
-    @apply px-4 py-[11px] shadow-lg;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .btn-sm {
-    @apply px-3 py-[5px] shadow-sm;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
 /* Forms */
@@ -26,30 +42,54 @@ input[type="search"]::-webkit-search-results-decoration {
 .form-select,
 .form-checkbox,
 .form-radio {
-    @apply border border-gray-200 shadow-xs rounded-lg focus:ring-0 focus:ring-offset-0;
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border-radius: 0.5rem;
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-multiselect:focus,
+.form-select:focus,
+.form-checkbox:focus,
+.form-radio:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .form-input,
 .form-textarea,
 .form-multiselect,
 .form-select {
-    @apply bg-white text-sm py-2.5 px-4 focus:border-blue-300;
+  background-color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.5715;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-multiselect:focus,
+.form-select:focus {
+  border-color: var(--color-blue-300, #93c5fd);
 }
 
-.form-input,
-.form-textarea {
-    @apply placeholder-gray-400;
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-gray-400, #9ca3af);
 }
 
 .form-select {
-    @apply pr-10;
+  padding-right: 2.5rem;
 }
 
 .form-checkbox,
 .form-radio {
-    @apply text-gray-800 checked:bg-blue-500 checked:border-transparent focus-visible:not-checked:border-blue-300;
+  color: #1f2937;
+  accent-color: var(--color-blue-500, #3b82f6);
 }
 
 .form-checkbox {
-    @apply rounded-xs;
+  border-radius: 0.125rem;
 }

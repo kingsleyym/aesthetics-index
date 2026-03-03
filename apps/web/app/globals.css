@@ -1,16 +1,13 @@
 @import "tailwindcss";
+@source "../../../packages/ui/src";
 
 /* Additional styles (layer(components) wie Vorlage) */
-@import "./utility-patterns.css" layer(components);
+@import "./utility-patterns.css";
 @import "./theme.css";
 @import "./range-slider.css";
 
 /* AOS library styles */
 @import "aos/dist/aos.css";
-
-/* UI package tokens + base styles */
-@import "@aesthetics-index/ui/tokens";
-@import "@aesthetics-index/ui/styles";
 
 @theme {
   --font-inter: Inter, sans-serif;

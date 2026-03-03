@@ -1,6 +1,7 @@
 /* Scrollspy links */
 [data-scrollspy-link].scrollspy-active {
-  @apply text-blue-500 font-medium;
+  color: #3b82f6;
+  font-weight: 500;
 }
 
 /* Custom AOS animations */
